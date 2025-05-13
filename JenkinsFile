@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                echo '🔧 Building...'
+                // Aquí puedes añadir comandos reales como: sh './mvnw clean package'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo '🧪 Testing...'
+                // Aquí puedes añadir comandos reales como: sh './mvnw test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo '🚀 Deploying...'
+                // Aquí irían tus comandos de despliegue: docker build, kubectl apply, etc.
+            }
+        }
+    }
+}
