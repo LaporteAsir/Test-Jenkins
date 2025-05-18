@@ -4,10 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                dir('miapp') {
-                    sh './mvnw clean package'
-                    echo '🔧 Building..'
-                }
+                sh './mvnw clean package -f miapp/pom.xml'
+                echo '🔧 Building..'
             }
         }
 
