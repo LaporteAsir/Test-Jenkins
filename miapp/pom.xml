@@ -33,7 +33,7 @@
             <configuration>
                 <archive>
                     <manifest>
-                        <mainClass>App</mainClass>
+                        <mainClass>miapp.App</mainClass>
                     </manifest>
                 </archive>
             </configuration>
