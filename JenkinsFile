@@ -17,9 +17,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo '🚀 Deploying...'
-                sh 'docker rm -f spring-petclinic || true'
-                sh 'docker build -t spring-petclinic .'
-                sh 'docker run -d -p 8080:8080 --name spring-petclinic spring-petclinic'
             }
         }
     }
