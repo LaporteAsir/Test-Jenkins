@@ -21,7 +21,7 @@ pipeline {
                 sh 'docker rm -f test-jenkins || true'
                 sh 'ls -lh miapp/target'
                 sh 'docker build -t test-jenkins miapp/'
-                sh 'docker run -d -p 8080:8080 --name test-jenkins test-jenkins'
+                sh 'docker run -d -p 9090:8080 --name test-jenkins test-jenkins'
             }
         }
     }
