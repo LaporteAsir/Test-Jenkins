@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh './mvnw clean package'
                 echo '🔧 Building..'
             }
         }
@@ -18,6 +19,7 @@ pipeline {
             steps {
                 echo '🚀 Deploying...'
                 sh 'docker rm -f test-jenkins || true'
+                sh 'ls -lh target'
                 sh 'docker build -t test-jenkins .'
                 sh 'docker run -d -p 8080:8080 --name test-jenkins test-jenkins'
             }
